@@ -1,0 +1,2 @@
+['remote "lfs-storage"']
+    url = ../git@github.com:BorisVIkVik/Pinguins_Data_Science_lab2_PostgreSQL.git
