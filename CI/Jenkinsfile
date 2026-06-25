@@ -54,14 +54,14 @@ pipeline {
         stage('Push')
         {
             steps{
-                sh 'docker push borisvikvik/borisvikvik-penguins-data-science:latest'
+                sh 'docker push borisvikvik/borisvikvik-penguins-data-science-2lab:latest'
             }
         }
         
     }
     post{
         always{
-            sh 'docker logout'
+            sh 'ls && docker compose stop && docker logout'
         }
     }
 

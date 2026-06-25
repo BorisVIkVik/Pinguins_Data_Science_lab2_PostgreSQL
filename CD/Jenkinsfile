@@ -13,19 +13,20 @@ pipeline{
         }
         stage('Pull image'){
             steps{
-                sh 'docker pull borisvikvik/borisvikvik-penguins-data-science'
+                sh 'docker pull borisvikvik/borisvikvik-penguins-data-science-2lab'
             }
         }
         stage('Run container'){
             steps{
-                sh 'docker compose up'
+                sh 'docker compose up -d'
+                sh 'sleep 30 && docker compose down'
                 // sh 'docker run --name penguins-data-science -p 8080:5556'
             }
         }
     }
     post{
         always{
-            sh 'docker stop penguins-data-science '
+            sh 'docker logout'
         }
     }
 }
