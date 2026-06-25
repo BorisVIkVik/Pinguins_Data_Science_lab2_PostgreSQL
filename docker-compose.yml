@@ -17,7 +17,6 @@ services:
     ports:
       - 8000:8000
     image: borisvikvik/borisvikvik-penguins-data-science-2lab:latest
-    platform: linux/amd64
   adminer:
     image: adminer
     restart: always
